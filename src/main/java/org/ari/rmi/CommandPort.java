@@ -1,4 +1,4 @@
-package org.ari.controller.rmi;
+package org.ari.rmi;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

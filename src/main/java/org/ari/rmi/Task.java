@@ -1,4 +1,4 @@
-package org.ari.controller.rmi;
+package org.ari.rmi;
 
 public interface Task<T> {
     T execute();
