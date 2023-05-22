@@ -31,12 +31,14 @@ public class Controller {
         return 0;
     }
 
-    public String execute(CommandType commandType) {
+    public String execute(CommandType commandType, Command command) {
         String result = null;
         switch (commandType) {
             case STOP:
                 result = this.stop();
                 break;
+   //         case CREATE_ARMY:
+   //             this.getRoster().createArmy();
             default:
         }
         return result;

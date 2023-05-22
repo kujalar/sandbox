@@ -1,5 +1,6 @@
 package org.ari;
 
+import org.ari.controller.Command;
 import org.ari.controller.CommandType;
 import org.ari.rmi.CommandPort;
 import org.ari.rmi.ControllerTask;
@@ -16,7 +17,7 @@ public class ClientMain {
             String name = "rmiCommandPort";
             Registry registry = LocateRegistry.getRegistry();
             CommandPort comp = (CommandPort) registry.lookup(name);
-            ControllerTask stop = new ControllerTask(CommandType.STOP);
+            ControllerTask<String,Command> stop = new ControllerTask(CommandType.STOP, null);
             String result = comp.executeTask(stop);
             System.out.println("Task was executed with result: "+result);
         } catch (Exception e) {
