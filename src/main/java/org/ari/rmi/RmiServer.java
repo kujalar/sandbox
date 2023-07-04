@@ -25,7 +25,6 @@ public class RmiServer {
             rmiCommandPort = new CommandPortImpl(controller);
             stub = (CommandPort) UnicastRemoteObject.exportObject(rmiCommandPort,0);
             registry = LocateRegistry.createRegistry(1099);
-            //    Registry registry = LocateRegistry.getRegistry();
             registry.rebind(name, stub);
             System.out.println("rmiCommandPort bound");
             System.out.println("RmiServer started.");
@@ -42,7 +41,7 @@ public class RmiServer {
             System.out.println("Shutting down the RmiServer.");
             UnicastRemoteObject.unexportObject(registry,true);
             if(registry!=null) {
-                //         registry.unbind(rmiCommandPortName);
+                //         registry.unbind(rmiCommandPortName); ei taida olla tarpeellinen tässä
             }
         } catch (RemoteException re) {
             System.err.println("rmiCommandPort exception:");

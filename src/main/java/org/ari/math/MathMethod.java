@@ -10,7 +10,7 @@ public class MathMethod {
     /**
      *
      * @param value
-     * @return BigDecimal telling how many times 1 has to be multiplied with base to get value.
+     * @return BigDecimal telling how many times 1 has to be multiplied with the base to get the value.
      */
     public static double howManyTimesOneIsMultipliedWithBase(double base,int value) {
        return Math.log(value)/Math.log(base);

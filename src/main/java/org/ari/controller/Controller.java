@@ -31,8 +31,9 @@ public class Controller {
         return 0;
     }
 
-    public String execute(CommandType commandType, Command command) {
+    public String execute(Command command) {
         String result = null;
+        CommandType commandType = command.getCommandType();
         switch (commandType) {
             case STOP:
                 result = this.stop();
